@@ -200,26 +200,31 @@ export default function Home() {
 
                 <div id={"goofy-posts"} className={styles.MainContent} onScroll={onPostScroll}>
                     <div className={styles.PostDiv}>
-                        <h2 id={"top"}>{(GlobalStuff.loggedIn) ? (<span>Hi, <a href={`${basePath}/user/profile?userId=${encodeURIComponent(username)}&serverId=${encodeURIComponent(GlobalStuff.server)}`} target={"_blank"} style={{textDecoration: "none"}}>@{username}</a></span>) : "Hi, Guest"}</h2>
+                        <h2 className={styles.greeting} id={"top"}>{(GlobalStuff.loggedIn) ? (<span>Hi, <a href={`${basePath}/user/profile?userId=${encodeURIComponent(username)}&serverId=${encodeURIComponent(GlobalStuff.server)}`} target={"_blank"} style={{textDecoration: "none"}}>@{username}</a></span>) : "Hi, Guest"}</h2>
 
-                        Cool Posts below: &nbsp;
-                        <button onClick={loadPosts}>Refresh</button>
-                        <EntryList elements={postArr} compFn={(post) => (<PostEntry post={post}></PostEntry>)} keyFn={(post) => (post.uuid)}
-                                   extra={
-                                       <div
-                                           className={postStyles.PostEntryDiv}>
-                                           {(postArr.length > 0) ?
-                                               <button id={"load-more-posts-btn"} className={"cont-btn"}
-                                                       onClick={loadMorePosts}>Load
-                                                   More Posts
-                                               </button> :
-                                               <div>
-                                                   <h3>No Posts :(</h3>
-                                                   <p>Seems like you aren't following anyone or no-one you are following has posted anything :(<br/>
+                        <div className={styles.coolPosts}>
+                            <p>Cool Posts below:
+                            <button className={styles.button} onClick={loadPosts}>Refresh</button></p>
+                        </div>
+                        
+                        <div className={styles.goofyList}>
+                            <EntryList elements={postArr} compFn={(post) => (<PostEntry post={post}></PostEntry>)} keyFn={(post) => (post.uuid)}
+                               extra={
+                                   <div
+                                       className={postStyles.PostEntryDiv}>
+                                       {(postArr.length > 0) ?
+                                           <button id={"load-more-posts-btn"} className={"cont-btn"}
+                                                   onClick={loadMorePosts}>Load
+                                               More Posts
+                                           </button> :
+                                           <div>
+                                               <h3>No Posts :(</h3>
+                                               <p>Seems like you aren't following anyone or no-one you are following has posted anything :(<br/>
                                                    Try finding some posts in the search or take a look at the <Link href={"/guest/search?tag=global"}>global feed</Link>.</p>
-                                               </div>}
-                                       </div>
-                                   }></EntryList>
+                                           </div>}
+                                   </div>
+                               }></EntryList>
+                        </div>
                     </div>
 
                     <div className={styles.NewsDiv}>

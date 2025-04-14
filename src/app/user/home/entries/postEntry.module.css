@@ -1,9 +1,14 @@
-.PostEntryDiv {
+.PostEntryDiv 
+{
     overflow-y: auto;
     overflow-x: hidden;
     /*max-height: 520px;*/
-    border: 2px solid #8080F0;
-    padding: 10px;
+    border: 2px solid var(--post-outline);
+    border-radius: 10px;
+    padding: 1rem;
+    
+    background: var(--post-background);
+    
     margin: 10px;
 }
 

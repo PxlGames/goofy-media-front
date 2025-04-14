@@ -88,7 +88,7 @@ export default function PostEntry({post}) {
     return (
         <div className={styles.PostEntryDiv} style={{position: "relative"}}>
             <div className={styles.PostUserHeader}>
-                <b>{post.displayName}</b> <a style={{textDecoration: "none"}}
+                <b>{post.displayName}</b> <a style={{textDecoration: "none", color:"rgba(255, 255, 255, 0.6)"}}
                                              href={`${basePath}/user/profile?userId=${encodeURIComponent(post.author)}&serverId=${encodeURIComponent(GlobalStuff.server)}`}>@{post.author}</a> - {new Date(post.createdAt).toLocaleString()}
             </div>
 

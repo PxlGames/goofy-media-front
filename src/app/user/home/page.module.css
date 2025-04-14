@@ -12,8 +12,11 @@
 
 /*Should be on the vertical center*/
 .NavBarDiv {
-    background-color: #303080;
-    padding: 10px;
+    background-color: var(--home-div-background);
+    padding: 1rem;
+    
+    border-radius: 0.25rem;
+    
     display: inline-block;
     position: relative;
     top: 50%;
@@ -26,7 +29,8 @@
 }
 
 .PostDiv {
-    background-color: #101060;
+    background-color: var(--home-div-background);
+    border-radius: 0.5rem;
     padding: 10px;
     overflow-x: auto;
 
@@ -34,6 +38,11 @@
     min-height: 100%;
 }
 
+.goofyList li
+{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
 .NewsDiv {
     background-color: #101020;
@@ -107,6 +116,63 @@
     }
 }
 
+
+.button{
+    background: linear-gradient(45deg, #ff0099, #ff6600);
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+
+    border-radius: 1rem;
+    font-weight: bold;
+    border: none;
+    transition: background 0s, transform 0.1s;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+}
+
+.button:hover{
+    transform: scale(1.05);
+    background: #de5a2a;
+    box-shadow: 0 0 15px #ff0099;
+    color: white;
+}
+
+
+.NavBarDiv a
+{
+    background: var(--post-background);
+    color: white;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    
+    text-decoration: none;
+    
+    border-radius: 0.5rem;
+    font-weight: bold;
+    border: none;
+    transition: background 0s, transform 0.2s;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+}
+
+.NavBarDiv a:hover{
+    transform: scale(1.0025);
+    background: rgba(255,255,255, 0.1);
+    color: white;
+}
+
+.coolPosts
+{
+    text-align: center;
+    margin-bottom: -1.25rem;
+}
+
+.greeting
+{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 /*!*NavBar floats left, PostDiv in center and NewsDiv floats right*!*/
 /*.main {*/

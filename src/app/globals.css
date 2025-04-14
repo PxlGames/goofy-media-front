@@ -13,6 +13,9 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --home-div-background: #282946;
+  --post-background: rgba(1, 1, 1, 0.1);
+  --post-outline: #585a69;
 }
 
 html {
