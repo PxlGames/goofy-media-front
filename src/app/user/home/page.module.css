@@ -157,7 +157,7 @@
 }
 
 .NavBarDiv a:hover{
-    transform: scale(1.0025);
+    transform: scale(1.0025); 
     background: rgba(255,255,255, 0.1);
     color: white;
 }
