@@ -11,22 +11,24 @@
 /*}*/
 
 :root {
-  --background: #0a0a0a;
+  --background: #1c212d;
   --foreground: #ededed;
 
   --text-gray: #c3c3c3;
 
-  --central-background: #161b4a;
-  --nav-background: #181d4f;
-  --nav-link-background: #050c27;
+  --central-background: #232d39;
+  --nav-background: #232d39;
+  --nav-link-background: #14172a;
   --nav-link-hover-background: #364599;
 
-  --post-border: #5372e0;
-  --post-background: rgba(0,0,0,0.2);
+  --post-header: #336cc7;
+  --post-footer: #2d303b;
+  --post-border: #4e5467;
+  --post-background: rgba(0, 0, 0, 0);
 
   --container-border: #5f7bde;
 
-  --account-settings-background: #0b1434;
+  --account-settings-background: #14172a;
 
   --comment-spacing: 1rem;
 }

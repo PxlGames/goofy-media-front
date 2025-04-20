@@ -233,13 +233,29 @@ export default function Home() {
                     <div className={showBurgerMenu ? styles.NavBarDivHamburgerMode : styles.NavBarDiv}>
                         {showBurgerMenu ? <></> : <h2>Navigation</h2>}
                         <p>
-                            {admin ? (<><Link href={"/admin/dashboard"}>Admin Dashboard</Link></>) : (<></>)}
+                            <Link href={"/guest/search"}>Search</Link>
                             {(GlobalStuff.loggedIn) ? <>
                                 <Link
                                     href={"/user/notifications"}>Notifications {((notifCount == undefined || notifCount == 0) ? "" : `(${notifCount})`)}</Link>
                             </> : ""}
                             <Link href={"/user/home"}>Home</Link>
                             <Link href={"/guest/search?tag=global"}>Global Feed</Link>
+                            
+                            <Link href={"/guest/news"}>News</Link>
+                            {(GlobalStuff.loggedIn) ? <><Link href={"/user/following"}>Following</Link></> : ""}
+                            {(GlobalStuff.loggedIn) ? <><Link href={"/user/followers"}>Followers</Link></> : ""}
+                            {(GlobalStuff.loggedIn) ? <><Link href={"/user/liked_posts"}>Liked Posts</Link></> : ""}
+                            {(GlobalStuff.loggedIn) ? <><Link href={"/user/post_composer"}>Post Composer</Link></> : ""}
+                        </p>
+
+                        <p>
+                            <hr/>
+                            
+                            {admin ? (<><Link href={"/admin/dashboard"}>Admin Dashboard</Link></>) : (<></>)}
+                            {(GlobalStuff.loggedIn) ? <>
+                                <Link
+                                    href={"/user/notifications"}>Notifications {((notifCount == undefined || notifCount == 0) ? "" : `(${notifCount})`)}</Link>
+                            </> : ""}
                             {(GlobalStuff.loggedIn) ? (<>
                                 <a onClick={async () => {
                                     await logout();
@@ -250,13 +266,10 @@ export default function Home() {
                                     goPath("/guest/login")
                                 }}>Login</a>
                             </>)}
-                            <Link href={"/guest/news"}>News</Link>
-                            <Link href={"/guest/search"}>Search</Link>
                             {(GlobalStuff.loggedIn) ? <><Link href={"/user/following"}>Following</Link></> : ""}
                             {(GlobalStuff.loggedIn) ? <><Link href={"/user/followers"}>Followers</Link></> : ""}
                             {(GlobalStuff.loggedIn) ? <><Link href={"/user/liked_posts"}>Liked Posts</Link></> : ""}
                             <Link href={"/user/account_settings"}>Account Settings</Link>
-                            {(GlobalStuff.loggedIn) ? <><Link href={"/user/post_composer"}>Post Composer</Link></> : ""}
                         </p>
                     </div>
                 </nav>
